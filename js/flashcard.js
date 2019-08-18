@@ -1,8 +1,7 @@
 var flag = 1;
 
 var id = 0;
-var js=
-{
+var js={
     "transactionId": "d0b13e9b-2a5c-4128-ae37-ad09c86bdcaf",
         "live": false,
             "visitor": {
@@ -16,6 +15,7 @@ var js=
             "Orders - Last 30 Days": 0.0,
             "Lifetime visit count": 1.0,
             "Lifetime Sale Views": 1.0,
+            "Lifetime Women Views": 3.0,
             "Average visit duration in minutes": 0.3,
              "Lifetime event count": 3.0,
              "Orders - Last 60 Days": 0.0,
@@ -23,10 +23,10 @@ var js=
         },
         "dates": {
             "Last visit": 1566087191000,
-                "last_visit_start_ts": 1566087173000,
-                    "audience_tealiumlabs-hackathon_sd-aug-2019-036_129_count_ts": 1566087191013,
-                        "audience_tealiumlabs-hackathon_sd-aug-2019-036_106_count_ts": 1566087173131,
-                            "audience_tealiumlabs-hackathon_sd-aug-2019-036_124_count_ts": 1566088994879,
+            "last_visit_start_ts": 1566087173000,
+             "audience_tealiumlabs-hackathon_sd-aug-2019-036_129_count_ts": 1566087191013,
+             "audience_tealiumlabs-hackathon_sd-aug-2019-036_106_count_ts": 1566087173131,
+             "audience_tealiumlabs-hackathon_sd-aug-2019-036_124_count_ts": 1566088994879,
                                 "audience_tealiumlabs-hackathon_sd-aug-2019-036_121_count_ts": 1566087173131,
                                     "Last Visit Date": 1566088994879,
                                         "First visit": 1566087173000,
@@ -104,7 +104,7 @@ var js=
 }
 
 var charValue1;
-charValue1= js.metrics["Weeks since first visit"];
+charValue1 = js["visitor"]["metrics"]["Weeks since first visit"];
 
 var chartName = [
     "Women Views",
