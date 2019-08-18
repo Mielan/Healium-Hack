@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/sequences.css" />
+    <script src="js/flashcard.js"></script>
+    <script>
+        window.onload = function () {
+
+            window.chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light",
+                exportFileName: "Doughnut Chart",
+                exportEnabled: true,
+                animationEnabled: true,
+                title: {
+                    text: "ViewCounts"
+                },
+                legend: {
+                    cursor: "pointer",
+                    itemclick: explodePie
+                },
+                data: [{
+                    type: "doughnut",
+                    innerRadius: 60,
+                    showInLegend: true,
+                    toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+                    indexLabel: "{name} - #percent%",
+                    dataPoints: [
+                        { y: 45, name: "Appeal" },
+                        { y: 12, name: "Clothing" },
+                        { y: 30, name: "Travelling" },
+                        { y: 80, name: "Housing" },
+                        { y: 15, name: "Education" },
+                        { y: 15, name: "Shoes" },
+                        { y: 25, name: "Others" }
+                    ]
+                }]
+            });
+            chart.render();
+            chart.title.remove();
+            function explodePie(e) {
+                if (typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+                    e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+                } else {
+                    e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+                }
+                e.chart.render();
+            }
+
+        }
+
+        setInterval(function () { updateScale() }, 2000);
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    </div>
+    
+  
+   
+
+</body>
+</html>
